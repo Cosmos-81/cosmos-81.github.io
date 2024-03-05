@@ -1,5 +1,8 @@
 ---
 title: RiNgo Pages
+description: RiNgoのページです。
+author: RiNgo
+tags: RiNgo, プロフィール
 ---
 
 # こんにちは。
@@ -20,6 +23,10 @@ title: RiNgo Pages
 
 池袋に本社がある会社で、末端の底辺プログラマをしてます。
 (一応プライム上場かも...？)
+
+## 趣味
+
+バイク: [CB125R](s_motorcycle.html)
 
 ## 各種SNS
 
