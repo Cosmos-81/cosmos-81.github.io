@@ -34,6 +34,10 @@ BlueSky: https://bsky.app/profile/ayase-net.work
 
 X: https://twitter.com/55555_Japan
 
-# SPECIAL
+# 相互リンク
+
+[【水澄net.com】Intelの趣味のHP](https://www.misumi-net.com/)
+
+## SPECIAL
 
 SP01 - [インターネット最高！](https://internetsai.co/)

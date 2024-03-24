@@ -7,7 +7,7 @@
 .mac-os-11 { --title-bar-height: 28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4, h5 { white-space: pre-wrap; }
-body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background: inherit; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
@@ -27,7 +27,7 @@ body.typora-export { padding-left: 30px; padding-right: 30px; }
 #write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
 img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
-button, input, select, textarea { color: inherit; font: inherit; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-variant-alternates: inherit; font-variant-ligatures: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-feature-settings: inherit; font-optical-sizing: inherit; font-variation-settings: inherit; }
 input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
 *, ::after, ::before { box-sizing: border-box; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
@@ -54,8 +54,8 @@ thead, tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
-.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
-.CodeMirror-linenumber { user-select: none; }
+.CodeMirror-gutters { border-right-width: 0px; border-right-style: none; border-right-color: currentcolor; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
 .CodeMirror { text-align: left; }
 .CodeMirror-placeholder { opacity: 0.3; }
 .CodeMirror pre { padding: 0px 4px; }
@@ -75,7 +75,7 @@ div.hr:focus { cursor: none; }
 svg { break-inside: avoid; }
 .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
 .footnotes + .footnotes { margin-top: 0px; }
-.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
 li div { padding-top: 0px; }
 blockquote { margin: 1rem 0px; }
 li .mathjax-block, li p { margin: 0.5rem 0px; }
@@ -88,7 +88,7 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
 @media print {
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
   #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
-  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export * { print-color-adjust: exact; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
   .is-mac table { break-inside: avoid; }
@@ -109,7 +109,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 [contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
 .md-task-list-item { position: relative; list-style-type: none; }
 .task-list-item.md-task-list-item { padding-left: 0px; }
-.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: medium; }
 .math { font-size: 1rem; }
 .md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
 .md-toc-content { position: relative; margin-left: 0px; }
@@ -139,14 +139,14 @@ code, pre, samp, tt { font-family: var(--monospace); }
 kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
 .md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
 code { text-align: left; vertical-align: initial; }
-a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
 .os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
 .md-diagram-panel > svg { max-width: 100%; }
 [lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
 [lang="mermaid"] .node text { font-size: 1rem; }
-table tr th { border-bottom: 0px; }
+table tr th { border-bottom-width: 0px; border-bottom-style: none; border-bottom-color: currentcolor; }
 video { max-width: 100%; display: block; margin: 0px auto; }
-iframe { max-width: 100%; width: 100%; border: none; }
+iframe { max-width: 100%; width: 100%; border: medium; }
 .highlight td, .highlight tr { border: 0px; }
 mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
 .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
@@ -174,7 +174,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
 .outline-content ul { margin-top: 0px; margin-bottom: 0px; }
 .outline-content strong { font-weight: 400; }
-.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
 .outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
 .outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
 .outline-expander:hover::before { content: ""; }
@@ -187,14 +187,14 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
 .outline-label:hover { text-decoration: underline; }
 .outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
-.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
 .outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
 .outline-item-open > .outline-item > .outline-expander::before { content: ""; }
 .outline-children { display: none; }
 .info-panel-tab-wrapper { display: none; }
 .outline-item-open > .outline-children { display: block; }
 .typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
-.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
 .typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
 .typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
 .typora-export-collapse-outline .outline-children { display: none; }
@@ -208,7 +208,7 @@ mjx-container { break-inside: avoid; }
 .md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
 .md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
 .md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
-.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left-width: 0.25em; border-left-style: solid; border-left-color: rgb(0, 0, 0); }
 .md-alert-text-note { color: rgb(9, 105, 218); }
 .md-alert-text-important { color: rgb(130, 80, 223); }
 .md-alert-text-warning { color: rgb(154, 103, 0); }
@@ -608,11 +608,11 @@ header, .context-menu, .megamenu-content, footer{
 }
 
 
-
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
 </style><title>RiNgo Pages</title>
 </head>
-<body class='typora-export os-windows'><div class='typora-export-content'>
+<body class='typora-export'><div class='typora-export-content'>
 <div id='write'  class=''><h1 id='こんにちは'><span>こんにちは。</span></h1><p><strong><span>RiNgo</span></strong><span>というハンドルネームで活動しているヒトです。</span></p><p><img src="./assets/icon_cut.png" alt="icon_cut" style="zoom:50%;" /></p><h2 id='ringoに関して'><span>RiNgoに関して</span></h2><figure class='table-figure'><table><thead><tr><th><span>Q</span></th><th><span>A</span></th></tr></thead><tbody><tr><td><span>年齢</span></td><td><span>非公表 (</span><a href='https://www.google.com/search?q=%E3%82%A8%E3%83%B4%E3%82%A1Q+%E5%85%AC%E9%96%8B%E6%97%A5'><span>エヴァQ公開時</span></a><span>に小学校6年生)</span></td></tr><tr><td><span>出身地</span></td><td><span>新潟県中越地方</span></td></tr><tr><td><span>現居住地</span></td><td><span>東京都</span><a href='https://wwwtb.mlit.go.jp/kanto/soumu/sosiki/sikyoku_syozaiti/tama.html'><span>多摩ナンバー</span></a><span>地域</span></td></tr></tbody></table></figure><h2 id='普段なにしてんの'><span>普段、なにしてんの？</span></h2><p><span>池袋に本社がある会社で、末端の底辺プログラマをしてます。</span>
-<span>(一応プライム上場かも...？)</span></p><h2 id='趣味'><span>趣味</span></h2><p><span>バイク: </span><a href='s_motorcycle.html'><span>CB125R</span></a></p><h2 id='各種sns'><span>各種SNS</span></h2><p><span>BlueSky: </span><a href='https://bsky.app/profile/ayase-net.work' target='_blank' class='url'>https://bsky.app/profile/ayase-net.work</a></p><p><span>X: </span><a href='https://twitter.com/55555_Japan' target='_blank' class='url'>https://twitter.com/55555_Japan</a></p><h1 id='special'><span>SPECIAL</span></h1><p><span>SP01 - </span><a href='https://internetsai.co/'><span>インターネット最高！</span></a></p></div></div>
+<span>(一応プライム上場かも...？)</span></p><h2 id='趣味'><span>趣味</span></h2><p><span>バイク: </span><a href='s_motorcycle.html'><span>CB125R</span></a></p><h2 id='各種sns'><span>各種SNS</span></h2><p><span>BlueSky: </span><a href='https://bsky.app/profile/ayase-net.work' target='_blank' class='url'>https://bsky.app/profile/ayase-net.work</a></p><p><span>X: </span><a href='https://twitter.com/55555_Japan' target='_blank' class='url'>https://twitter.com/55555_Japan</a></p><h1 id='相互リンク'><span>相互リンク</span></h1><p><a href='https://www.misumi-net.com/'><span>【水澄net.com】Intelの趣味のHP</span></a></p><h2 id='special'><span>SPECIAL</span></h2><p><span>SP01 - </span><a href='https://internetsai.co/'><span>インターネット最高！</span></a></p></div></div>
 </body>
 </html>
