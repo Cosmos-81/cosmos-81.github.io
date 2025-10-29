@@ -1,0 +1,29 @@
+/* styles.css - extracted from index.html inline <style> block */
+
+/* Interをベースに、日本語部分はNoto Sans JPを使う */
+body {
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* セクション切り替え時のスムーズな表示（なくても良いが、あるとモダンさが増す） */
+.page-section {
+    display: none; /* JSで制御するためデフォルトは非表示 */
+    animation: fadeIn 0.5s ease-in-out;
+}
+.page-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* アクティブなナビゲーションボタンのスタイル */
+.nav-button.active {
+    background-color: #db2777; /* pink-600 */
+    color: white;
+}
+
