@@ -1,0 +1,160 @@
+/* @theme ringo */
+@import 'default';
+
+/* Google Fontsから Noto Sans JP をインポート */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+/* --- 全体・標準スライドのスタイル --- */
+section {
+  /* フォント指定の先頭に Noto Sans JP を配置 */
+  font-family: "Noto Sans JP", "BIZ UDPGothic", "Meiryo", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 32px;
+  color: #333333;
+  background-color: #ffffff;
+  padding: 130px 60px 60px 60px;
+  justify-content: flex-start;
+}
+
+/* スライドタイトル (赤色・下線付き) */
+section h1 {
+  position: absolute;
+  top: 45px;
+  left: 60px;
+  right: 60px;
+  font-size: 48px;
+  color: #C00000; /* 落ち着いたダークレッド */
+  border-bottom: 3px solid #C00000;
+  padding-bottom: 10px;
+  margin: 0;
+  font-weight: 700; /* 太字に設定 */
+}
+
+/* 小見出し (h2) */
+section h2 {
+  font-size: 36px;
+  color: #D2322D; /* 少し明るめの赤 */
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-bottom: none;
+  font-weight: 700;
+}
+
+/* リストの間隔調整 */
+section ul, section ol {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 1.5em;
+}
+
+section li {
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+/* --- タイトルスライド用の特別スタイル --- */
+section.title-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px;
+  background-color: #c00000b0; /* 背景をダークレッドに */
+  color: #ffffff;
+}
+
+section.title-slide h1 {
+  position: static;
+  border-bottom: none;
+  color: #ffffff;
+  font-size: 64px;
+  padding-bottom: 0;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+section.title-slide h2 {
+  color: #F5C6CB; /* コントラストを保つ淡いピンク/赤 */
+  font-size: 36px;
+  margin: 0;
+}
+
+/* --- 角丸のデザイン（表・引用・コードブロック・画像） --- */
+
+/* 表（テーブル）の角丸と配色 */
+section table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #CCCCCC;
+  border-radius: 12px; /* テーブル全体の角丸 */
+  overflow: hidden; /* 角からはみ出る背景をカット */
+}
+
+section th {
+  background-color: #F8D7DA; /* テーマに合わせた淡い赤のヘッダー */
+  color: #A94442;
+  font-weight: bold;
+  padding: 12px;
+  border-bottom: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+}
+
+section td {
+  padding: 12px;
+  border-bottom: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+}
+
+/* テーブル内の不要な右・下線を消してスッキリさせる */
+section th:last-child,
+section td:last-child {
+  border-right: none;
+}
+section tr:last-child td {
+  border-bottom: none;
+}
+
+/* 引用ブロック（角丸＋左線） */
+section blockquote {
+  border-radius: 12px;
+  border-left: 8px solid #C00000;
+  background-color: #FDF4F5; /* 極薄い赤背景 */
+  padding: 15px 20px;
+  margin: 15px 0;
+}
+
+/* コードブロックや画像の角丸 */
+section pre,
+section img {
+  border-radius: 12px;
+}
+
+/* --- ページ番号（フッター） --- */
+section::after {
+  color: #7F7F7F;
+  font-size: 20px;
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+}
+
+/* --- ロゴ画像の設定（タイトルスライド以外） --- */
+section:not(.title-slide)::before {
+  content: "";
+  position: absolute;
+  top: 30px;      /* 上からの位置 */
+  right: 60px;    /* 右からの位置（スライドの余白と合わせています） */
+  width: 120px;   /* ロゴの横幅（適宜調整してください） */
+  height: 60px;   /* ロゴの縦幅（適宜調整してください） */
+  
+  /* 表示したい画像のURLをここに入れてください */
+  background-image: url("https://www.rin5red.com/img/RiNgo.png"); 
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+  z-index: 10;    /* タイトルなどの背面に隠れないように設定 */
+}
