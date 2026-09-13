@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>光あれ - 株式会社 逓信アトラスシステムズ</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-main: #e0e0e0;
+            --text-accent: #00ff41; /* ターミナルグリーン */
+            --border-color: #333;
+            --danger-color: #ff3333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Courier New', Consolas, monospace, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 40px;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            color: #888;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: var(--text-accent);
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+        }
+
+        .catchphrase {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--text-accent);
+            border-left: 5px solid var(--text-accent);
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        .concept-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .features {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature-card {
+            background: #111;
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            transition: border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--text-accent);
+        }
+
+        .feature-card h3 {
+            color: var(--text-accent);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #ccc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #111;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #1a1a1a;
+            color: var(--text-accent);
+            width: 25%;
+        }
+
+        .highlight {
+            color: var(--text-accent);
+            font-weight: bold;
+        }
+
+        .warning-box {
+            border: 2px dashed var(--danger-color);
+            padding: 30px;
+            text-align: center;
+            background: rgba(255, 51, 51, 0.05);
+            margin-bottom: 40px;
+        }
+
+        .warning-box h2 {
+            border: none;
+            color: var(--danger-color);
+            padding: 0;
+            text-align: center;
+            font-size: 2rem;
+            text-shadow: 0 0 10px rgba(255, 51, 51, 0.3);
+        }
+
+        .cta-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--text-accent);
+            border: 2px solid var(--text-accent);
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: var(--text-accent);
+            color: var(--bg-color);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .code-block {
+            background: #000;
+            padding: 15px;
+            border: 1px solid #333;
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo-text">株式会社 逓信アトラスシステムズ</div>
+        <h1>光あれ</h1>
+        <div class="catchphrase">回線の自由と主導権を、あなたの手に。</div>
+    </header>
+
+    <div class="code-block">
+        $ ping -c 4 8.8.8.8<br>
+        PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.<br>
+        64 bytes from 8.8.8.8: icmp_seq=1 ttl=118 time=2.41 ms<br>
+        ...<br>
+        $ echo "No Support, Full Control."
+    </div>
+
+    <section>
+        <p class="concept-text">
+            インターネット環境の「お仕着せ」に辟易しているインフラエンジニア、ギーク、そして真の玄人たちへ。<br>
+            株式会社逓信アトラスシステムズがお届けする『光あれ』は、既存のプロバイダが絶対に踏み込めない、あるいは採算が合わずにやりたがらない領域を解放する特化型光コラボレーションサービスです。
+        </p>
+    </section>
+
+    <section>
+        <h2>提供するのは「素材」のみ。</h2>
+        <div class="features">
+            <div class="feature-card">
+                <h3>究極の原価提供</h3>
+                <p>サポートデスクの人件費、華美な広告費、使わないオプション機能。すべてを削ぎ落とし、回線そのものの原価（＋最低限のシステム維持費）のみで提供します。</p>
+            </div>
+            <div class="feature-card">
+                <h3>完全ノンサポートの掟</h3>
+                <p>接続設定、ルーターの相性、速度低下の原因切り分け。我々は一切関知しません。ご自身の環境はご自身の技術力で構築・解決してください。</p>
+            </div>
+            <div class="feature-card">
+                <h3>VNEの縛りを破壊</h3>
+                <p>「特定のVNE事業者に固定されたくない」「追加コストを払うから好きなVNEを使わせろ」。技術的・制度的に可能であれば、原価負担のみであらゆる構成要件に応じます。</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>従来サービスとのパラダイムシフト</h2>
+        <table>
+            <tr>
+                <th>比較項目</th>
+                <th>一般的なプロバイダ</th>
+                <th>逓信アトラスシステムズ『光あれ』</th>
+            </tr>
+            <tr>
+                <td>料金体系</td>
+                <td>利益・サポート費込みのパッケージ</td>
+                <td class="highlight">回線原価のみの極限プライス</td>
+            </tr>
+            <tr>
+                <td>サポート体制</td>
+                <td>手厚い電話・チャット対応</td>
+                <td class="highlight">一切なし（Pingが通れば任務完了）</td>
+            </tr>
+            <tr>
+                <td>VNE・経路選択</td>
+                <td>会社指定のブラックボックス</td>
+                <td class="highlight">フルオープン（要望と原価次第で自由）</td>
+            </tr>
+            <tr>
+                <td>ターゲット層</td>
+                <td>手間をかけたくない一般ユーザー</td>
+                <td class="highlight">ネットワークを骨の髄まで愛する玄人</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="warning-box">
+        <h2>【警告】一般の方のお申し込みは固くお断りします</h2>
+        <p style="margin-top: 15px; color: #ddd;">
+            「インターネットに繋がらない」というクレームを窓口に入れる可能性が1%でもある方は、直ちにブラウザの戻るボタンを押してください。<br><br>
+            『光あれ』は、パケットの海を自力で泳ぎ切り、最高のルーティングを自らの手で構築したい方のためのキャンバスです。<br>
+            既存事業者の常識を捨て、真の自由を手に入れる覚悟はありますか？
+        </p>
+    </section>
+
+    <div class="cta-container">
+        <a href="#" class="cta-button">＞ 全ての条件に同意し、己の力で光を灯す</a>
+    </div>
+
+</div>
+
+<footer>
+    &copy; Teishin Atlas Systems Co., Ltd. All Rights Reserved.<br>
+    ※本サービスは技術的探求心と自己責任を持つユーザー向けに提供されます。
+</footer>
+
+</body>
+</html>
