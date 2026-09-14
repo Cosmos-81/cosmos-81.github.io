@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unknown Host</title>
+    <style>
+        /* 画面全体のスクロールを無くし、背景を暗くする */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #222;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        /* 背景のエラーメッセージ */
+        .message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #555;
+            font-size: 2rem;
+            text-align: center;
+            z-index: 0;
+        }
+
+        /* アヒル画像の共通スタイル */
+        .duck {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 120px; /* ここでアヒルのサイズを指定 */
+            height: auto;
+            z-index: 10;
+            will-change: transform;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="message">
+        <h1>404</h1>
+        <p>Host Not Found</p>
+    </div>
+
+    <!-- アヒルを描画するためのコンテナ -->
+    <div id="duck-container"></div>
+
+    <script>
+        // ==========================================
+        // ▼▼ 設定エリア ▼▼
+        // ==========================================
+        const DUCK_COUNT = 10; // ★ここでアヒルの個数を指定します（例: 10）
+        const BASE_SPEED = 5;  // ★移動スピードの基準値（大きくすると速くなります）
+        const DUCK_IMAGE_URL = 'https://www.rin5red.com/img/%E5%A5%BD%E5%A5%87%E5%BF%83%E3%82%A2%E3%83%92%E3%83%AB.png';
+        // ==========================================
+        // ▲▲ 設定エリア ▲▲
+        // ==========================================
+
+        const container = document.getElementById('duck-container');
+        const ducks = []; // それぞれのアヒルの状態を管理する配列
+
+        // アヒルを生成して画面に配置
+        for (let i = 0; i < DUCK_COUNT; i++) {
+            // 画像要素を作成
+            const img = document.createElement('img');
+            img.src = DUCK_IMAGE_URL;
+            img.className = 'duck';
+            container.appendChild(img);
+
+            // CSSで指定した横幅(初期値として使用)
+            const expectedWidth = 120;
+            const expectedHeight = 120; 
+
+            // 画面内のランダムな位置に配置
+            const x = Math.random() * (window.innerWidth - expectedWidth);
+            const y = Math.random() * (window.innerHeight - expectedHeight);
+
+            // それぞれのアヒルにランダムなスピードと方向を設定
+            // BASE_SPEED を基準に、それぞれ少しずつ速度をばらけさせる
+            const speedX = (Math.random() > 0.5 ? 1 : -1) * (BASE_SPEED + Math.random() * 2);
+            const speedY = (Math.random() > 0.5 ? 1 : -1) * (BASE_SPEED + Math.random() * 2);
+
+            // 管理用配列に保存
+            ducks.push({
+                element: img,
+                x: x,
+                y: y,
+                speedX: speedX,
+                speedY: speedY,
+                scaleX: speedX > 0 ? 1 : -1
+            });
+        }
+
+        // アニメーション処理
+        function animate() {
+            for (let i = 0; i < ducks.length; i++) {
+                const duck = ducks[i];
+                const el = duck.element;
+                
+                // 画像の現在の幅と高さを取得（読み込み完了後に正しい値になる）
+                const width = el.clientWidth;
+                const height = el.clientHeight;
+
+                // 位置を進める
+                duck.x += duck.speedX;
+                duck.y += duck.speedY;
+
+                // 左右の壁に当たった場合の判定
+                if (duck.x + width >= window.innerWidth || duck.x <= 0) {
+                    duck.speedX = -duck.speedX; // 反転
+                    duck.scaleX = duck.speedX > 0 ? 1 : -1; // 画像の向きを進行方向に合わせる
+                    duck.x = Math.max(0, Math.min(duck.x, window.innerWidth - width)); // 補正
+                }
+
+                // 上下の壁に当たった場合の判定
+                if (duck.y + height >= window.innerHeight || duck.y <= 0) {
+                    duck.speedY = -duck.speedY; // 反転
+                    duck.y = Math.max(0, Math.min(duck.y, window.innerHeight - height)); // 補正
+                }
+
+                // スタイルを適用して移動と向きを反映
+                el.style.transform = `translate(${duck.x}px, ${duck.y}px) scaleX(${duck.scaleX})`;
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        // 画面サイズが変更された時にアヒルが画面外に消えないようにする
+        window.addEventListener('resize', () => {
+            for (let i = 0; i < ducks.length; i++) {
+                const duck = ducks[i];
+                const width = duck.element.clientWidth || 120;
+                const height = duck.element.clientHeight || 120;
+                if (duck.x + width > window.innerWidth) duck.x = Math.max(0, window.innerWidth - width);
+                if (duck.y + height > window.innerHeight) duck.y = Math.max(0, window.innerHeight - height);
+            }
+        });
+
+        // アニメーション開始
+        animate();
+    </script>
+</body>
+</html>
