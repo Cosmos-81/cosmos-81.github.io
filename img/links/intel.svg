@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200" role="img">
+  <rect width="1000" height="200" rx="20" fill="#e74747"/>
+  <circle cx="104" cy="100" r="52" fill="#fff1e8"/>
+  <text x="104" y="122" text-anchor="middle" font-family="Arial,sans-serif" font-size="62" font-weight="700" fill="#e74747">M</text>
+  <text x="190" y="92" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#fff">Intelの趣味のHP</text>
+  <text x="190" y="133" font-family="Arial,sans-serif" font-size="22" fill="#fff1e8">misumi-net.com</text>
+</svg>

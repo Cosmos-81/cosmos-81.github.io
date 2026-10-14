@@ -1,0 +1,22 @@
+{
+  "content/pages": [
+    "content/pages/about-lisa.md",
+    "content/pages/favorite-songs.md",
+    "content/pages/home-lab.md",
+    "content/pages/site-log.md",
+    "content/pages/weekend.md"
+  ],
+  "content/motorcycle": [
+    "content/motorcycle/cb125r.md",
+    "content/motorcycle/maintenance.md",
+    "content/motorcycle/niigata-ride.md",
+    "content/motorcycle/photo-spots.md",
+    "content/motorcycle/yokohama-ride.md"
+  ],
+  "content/movie": [
+    "content/movie/dolby-cinema.md",
+    "content/movie/extreme-sound.md",
+    "content/movie/imax-gt.md",
+    "content/movie/movie-notes.md"
+  ]
+}
